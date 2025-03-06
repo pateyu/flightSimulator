@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flight Simulator</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.module.js"
+      }
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    #score {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+    }
+    #start-message,
+    #crash-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    #crash-message {
+      background-color: rgba(255, 0, 0, 0.8);
+      display: none;
+    }
+    
+  </style>
+  
+</head>
+<body>
+  <div id="score">Score: 0</div>
+  <div id="start-message">Press any key or controller button to start</div>
+  <div id="crash-message">You Crashed! Press Space to Restart</div>
+  <script type="module" src="{{ url_for('static', filename='flight.js') }}"></script>
+</body>
+</html>
